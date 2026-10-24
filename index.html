@@ -18,6 +18,7 @@ body{
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);
   background:var(--bg);
 }
+/* theme: mystical celestial dreamscape: aurora + ring moon + constellations (drawn on this canvas, behind everything) */
 #sky{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;display:block;pointer-events:none}
 .hidden{display:none!important}
 
@@ -45,6 +46,7 @@ label{font-size:15.5px;color:var(--muted)}
 .btn.small{width:auto;padding:8px 14px;font-size:15.5px}
 .btn.ghost{background:transparent;border:1px solid var(--edge);box-shadow:none}
 
+/* ICONS (inline line icons, gold/lavender) */
 .ic{width:1.15em;height:1.15em;vertical-align:-.2em;margin-right:.4em;fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:inline-block;flex:0 0 auto}
 .chip .ic{stroke:var(--purple)}.chip.active .ic,.chip:hover .ic{stroke:var(--gold)}
 .btn .ic{stroke:currentColor}
@@ -53,6 +55,7 @@ label{font-size:15.5px;color:var(--muted)}
 *{scrollbar-width:thin;scrollbar-color:rgba(167,139,250,.5) transparent}
 ::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:rgba(167,139,250,.45);border-radius:8px}
 
+/* MAIL */
 .chip{position:relative}
 .chip.hasnew::after{content:"";position:absolute;top:7px;right:9px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
 .mailitem .from{display:flex;align-items:center;gap:10px;min-width:0}
@@ -60,10 +63,15 @@ label{font-size:15.5px;color:var(--muted)}
 .mailitem.fresh{border-color:rgba(253,224,71,.55)}
 .newtag{font-size:11px;font-weight:800;letter-spacing:.5px;color:#0B0A1A;background:var(--gold);padding:2px 6px;border-radius:8px;vertical-align:middle}
 
+/* DANGER */
 .btn.danger{background:linear-gradient(90deg,#be123c,#e11d48);box-shadow:0 0 16px rgba(225,29,72,.45)}
 .btn.danger .ic{stroke:#fff}
 #delMsg{min-height:20px;font-size:15px;color:var(--bad);margin-bottom:10px}
 
+/* CLOUD CHECK */
+.cloudwarn{margin:0 0 14px;padding:10px 12px;border-radius:14px;font-size:15px;line-height:1.4;text-align:left;color:var(--warn);background:rgba(253,224,71,.08);border:1px solid rgba(253,224,71,.4)}
+
+/* LOCK SCREEN */
 #lock{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-start;justify-content:center;padding-block:max(20px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-y:auto}
 .lockbox{width:100%;max-width:380px;padding:28px 22px;text-align:center;margin:auto}
 .lockbox .moon{display:block;width:64px;height:64px;margin:0 auto;filter:drop-shadow(0 0 14px rgba(253,224,71,.55))}
@@ -73,7 +81,7 @@ label{font-size:15.5px;color:var(--muted)}
 .shake{animation:shake .4s}
 @keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
 .tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:14px;background:rgba(0,0,0,.3);border:1px solid var(--edge);margin:14px 0 4px}
-.tab{padding:10px;border:0;border-radius:11px;background:transparent;color:var(--muted);font-weight:700;font-size:17px;cursor:pointer;font-family:inherit}
+.tab{padding:10px 6px;border:0;border-radius:11px;background:transparent;color:var(--muted);font-weight:700;font-size:16px;cursor:pointer;font-family:inherit}
 .tab.active{color:#fff;background:linear-gradient(90deg,rgba(139,92,246,.55),rgba(232,121,249,.4));box-shadow:0 0 14px rgba(167,139,250,.45)}
 .lockbox label{display:block;text-align:left;margin-top:8px}
 #setupMsg{min-height:18px;font-size:15.5px;color:var(--bad);margin-bottom:10px}
@@ -85,6 +93,7 @@ label{font-size:15.5px;color:var(--muted)}
 .setupgrid{max-height:228px;overflow-y:auto;padding:6px;margin:6px 0 12px;border:1px solid var(--edge);border-radius:14px;background:rgba(0,0,0,.2)}
 .linkbtn{background:none;border:0;color:var(--gold);font-size:15.5px;margin-top:12px;cursor:pointer;font-family:inherit}
 
+/* APP */
 #app{position:relative;z-index:1;max-width:640px;margin:0 auto;padding-block:14px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;margin-bottom:14px}
 .topbar .brand{font-weight:800;font-size:20.5px}
@@ -105,6 +114,7 @@ label{font-size:15.5px;color:var(--muted)}
 .card h2{font-size:24px;margin-bottom:4px}
 .card p.purpose{font-size:15.5px;color:var(--muted);margin-bottom:14px}
 
+/* MOOD */
 .moods{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
 .mood{padding:12px 2px;text-align:center;border-radius:16px;border:1px solid var(--edge);background:rgba(255,255,255,.06);cursor:pointer;color:var(--text)}
 .mood .e{font-size:33.5px;display:block}
@@ -113,6 +123,7 @@ label{font-size:15.5px;color:var(--muted)}
 .hist{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;font-size:14.5px;color:var(--muted)}
 .hist span{padding:4px 8px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--edge)}
 
+/* LISTS */
 .item{padding:12px 14px;margin-top:10px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--edge)}
 .item .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .item h4{font-size:18px;margin-bottom:4px}
@@ -120,6 +131,7 @@ label{font-size:15.5px;color:var(--muted)}
 .item p{font-size:17px;white-space:pre-wrap;word-break:break-word;margin-top:6px;color:#E9E2FF}
 .empty{text-align:center;color:var(--muted);font-size:15.5px;padding:14px}
 
+/* GREETING */
 .tplrow{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 12px;margin:6px -2px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .tpl{flex:0 0 138px;scroll-snap-align:start;text-align:left;background:rgba(255,255,255,.06);border:1px solid var(--edge);border-radius:14px;padding:6px;color:var(--text);cursor:pointer;font-family:inherit}
 .tpl img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:9px;display:block;margin-bottom:6px}
@@ -142,6 +154,8 @@ label{font-size:15.5px;color:var(--muted)}
 .saved .info h4{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .saved .btns{display:flex;gap:6px}
 
+
+/* PROFILE, INVITE, DIALOG */
 .btn:disabled,.btn.disabled{opacity:.45;cursor:not-allowed;box-shadow:none;pointer-events:none}
 a.btn{text-align:center;text-decoration:none}
 .fine{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.45}
@@ -172,6 +186,7 @@ a.btn{text-align:center;text-decoration:none}
 .dlgbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .dlgbtns .btn{padding:12px}
 
+/* TOAST */
 #toast{
   position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translate(-50%,-140%);z-index:100;
   width:calc(100% - 28px);max-width:420px;padding:14px 16px;border-radius:18px;
@@ -183,6 +198,7 @@ a.btn{text-align:center;text-decoration:none}
 #toast b{display:block;font-size:17px}
 #toast span{font-size:14.5px;color:var(--muted)}
 
+/* AVATAR MODAL */
 #avatarModal{position:fixed;inset:0;z-index:80;background:rgba(11,10,26,.78);display:flex;align-items:center;justify-content:center;padding-block:max(14px,env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .modalbox{width:100%;max-width:460px;max-height:88vh;overflow:auto;padding:18px}
 .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
@@ -205,10 +221,11 @@ a.btn{text-align:center;text-decoration:none}
     <h1 class="grad">Cosmic Space</h1>
     <div class="tabs" id="authTabs">
       <button type="button" class="tab active" data-mode="login">Login</button>
-      <button type="button" class="tab" data-mode="signup">Sign Up</button>
+      <button type="button" class="tab" data-mode="signup">Create Account</button>
     </div>
     <div class="refbanner hidden" id="refBanner"></div>
     <p class="sub" id="lockSub"></p>
+    <div id="cloudWarn" class="cloudwarn hidden"></div>
 
     <!-- step 1: email + password -->
     <div id="stepCreds">
@@ -217,8 +234,8 @@ a.btn{text-align:center;text-decoration:none}
       <input id="pass2" type="password" placeholder="Confirm password" class="hidden">
       <div id="lockMsg"></div>
       <button class="btn" id="enterBtn">ENTER COSMIC SPACE</button>
-      <button type="button" class="linkbtn" id="forgotBtn">Password marandhutteengala?</button>
-      <p class="fine"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Your diary &amp; data are saved securely in the cloud and available on any device. <span style="opacity:.6">(v4)</span></p>
+      <button type="button" class="linkbtn" id="forgotBtn">Forgot password?</button>
+      <p class="fine"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Your diary &amp; data are saved securely in the cloud and available on any device. <span style="opacity:.6">(v5)</span></p>
     </div>
 
     <!-- step 2 (first time only): unique User ID + profile picture -->
@@ -394,22 +411,22 @@ a.btn{text-align:center;text-decoration:none}
 </div>
 
 <script>
+/* ---------- helpers ---------- */
 window.addEventListener('error', ev => { const m = document.getElementById('lockMsg'); if(m && !document.getElementById('lock').classList.contains('hidden')) m.textContent = 'Page error: ' + (ev.message || 'unknown'); });
 window.addEventListener('unhandledrejection', ev => { const m = document.getElementById('lockMsg'); if(m && !document.getElementById('lock').classList.contains('hidden')) m.textContent = 'Error: ' + ((ev.reason && ev.reason.message) || ev.reason || 'unknown'); });
 const FLIPIC = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.700L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.700L3 16"/><path d="M3 21v-5h5"/></svg>';
-const $ = s => document.querySelector(s);
-const $$ = s => [...document.querySelectorAll(s)];
+const $ = s => document.querySelector(s); const $\$ = s => [...document.querySelectorAll(s)];
 const ss = {
   get(k){ try{ return sessionStorage.getItem(k); }catch(e){ return null; } },
   set(k, v){ try{ sessionStorage.setItem(k, v); }catch(e){} },
   del(k){ try{ sessionStorage.removeItem(k); }catch(e){} }
 };
-let CURRENT = null;
+let CURRENT = null;   // logged-in account (null while locked)
 const store = {
-  key(k){ return CURRENT ? 'cs_d_' + CURRENT.id + '_' + k : 'cs_' + k; },
+  key(k){ return CURRENT ? 'cs_d_' + CURRENT.id + '_' + k : 'cs_' + k; },   // per-user data
   get(k, d){ try{ const v = localStorage.getItem(this.key(k)); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem(this.key(k), JSON.stringify(v)); }catch(e){ toast('Storage problem', 'Device storage full or blocked'); } if(CURRENT && SYNC_KEYS.includes(k)) queuePush(k, v); },
-  gget(k, d){ try{ const v = localStorage.getItem('cs_' + k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
+  gget(k, d){ try{ const v = localStorage.getItem('cs_' + k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },   // shared (accounts list)
   gset(k, v){ try{ localStorage.setItem('cs_' + k, JSON.stringify(v)); return true; }catch(e){ toast('Storage problem', 'Device storage full or blocked'); return false; } }
 };
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -419,926 +436,18 @@ const niceDate = t => new Date(t).toLocaleString([], {day:'numeric',month:'short
 function askConfirm(text, ok){
   return new Promise(res => {
     $('#dlgText').textContent = text; $('#dlgYes').textContent = ok || 'OK';
-    $('#dlg').classList.remove('hidden');
-    const done = v => { $('#dlg').classList.add('hidden'); $('#dlgYes').onclick = $('#dlgNo').onclick = null; res(v); };
+    \$('#dlg').classList.remove('hidden');
+    const done = v => { \$('#dlg').classList.add('hidden'); $('#dlgYes').onclick = $('#dlgNo').onclick = null; res(v); };
     $('#dlgYes').onclick = () => done(true); $('#dlgNo').onclick = () => done(false);
   });
 }
 let toastTimer;
 function toast(title, sub){
-  $('#toastT').textContent = title;
-  $('#toastS').textContent = sub || '';
-  $('#toast').classList.add('show');
+  \$('#toastT').textContent = title;
+  \$('#toastS').textContent = sub || '';
+  \$('#toast').classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => $('#toast').classList.remove('show'), 3200);
+  toastTimer = setTimeout(() => \$('#toast').classList.remove('show'), 3200);
 }
 
-const AVATARS = [
-'data:image/webp;base64,UklGRvYfAABXRUJQVlA4WAoAAAAQAAAAjwAAjwAAQUxQSBkEAAABDrq2bZu2rbXmvs+2bdtmZKY2vsGM7r3ZiZ7fy23bim70bBtbqxRsrT1njx76WGMiIiBIktowYsFIKDhdUAAewHkg7ywSklx5y+MvuXnhjdeXFSNoX/fx5kvClqy9ukUdoQuQaEhys1OuefiDn4sp4T8Qxs0ykmaR7QYJSnKdk5e0f9Te8XDQj6SMkpAxjrwM3y45OVUGm4drILnpufd9V5To96p3PCWE0Uct8d197aYZGYydFAK52kn3/VKoDnxfdGZI9FTVcF+7WvWaLSzl5I5XfVrNO66tiaaoqv6qHcncsoJR8rg7/yrHj1qaNFA13XlcRqM2/faQxz1eqI5amjeoajqODLk9pQPSxP5z6Z68JQVDbnJrtyzpnBGp3VtDxrkPkkVc7sqvC+2rBYiqX1/JbJHM2+pfLbQ3VCsgXjUdMF9jab26V/RFrYFE9VeXxjnKdi+q9NUqRFFuNy/ODc/6bsIoawZ9x8zMY4oOuXiq3x9LnjORYQ6y1qM6GKqVEKpfq3FexL3e1p5aC6/SMjYs+/1Qic2c2ChHRpK0r1Yjayob5MgLvQ7UclC9ZLE50WEp1rNoUxx50HBAdQCkpEY4cL/vK3GDw35ZpwHZ7YeiFEdY024zc27Web/oqzOIymRk1mXWE4VXh+BVGMfixMXaLZxCt0iMM3U6o152q3jGDH0Mt/5hMHSNhGnrqVeqeVjd1XIG5xA1Mci0na6u29wzxSn7GO7V7Q9dJIndlma6w6236zYXTbJoGlPg5ZW4ypdPMaHRDcfO6OCEGxqdrG+vtLvKT1SG+/xVaXdVCpOGKJ+ttMtKJlCHR1biNh/JMF4/4z4xMxP0QB0Hx6vAe4ue6+Q1jiHDrf8ciuskEremGhXZ1Ntdb+aIymW1ryrtvgqr5VLXJ9R7u9851ZXhg1UdQTXUGoQb/lIMEZBoYGnhIp5daQwqcRFp5CEclMRQuOYPVR1DNbXMy9HDgYIAJWVhuWxp4VGQ16VczuibBY4HjUazjX8vBAWJthuTp9ZHoxicyOvV4yCvgXwAy4PnKh/oAAdRfbvVryo4SDRtdUwlSJgXI6mrUv0tGpFQ1LCAhhbeQVN551U0lJahGdbqP36A5+8wnv9TeP6P41nn4FkH4lkn49lH4Nln4dmHwtmn4znHAHTOg+ccDM85IZ5zVDznzHjO4eHcU+C5x8FzzwXnHhDPPSmee2Q49+x4/BDg+Gng8WOB4+eDxw8Kjp8YHj86OH6GePww4fip4vHjhePnDMcPHI+fPJw4AjhxFnDiUPDE6cCJY4IT5wUnDg5OnCCcOEo4caZw4nDhxCnDieOGE+cOJw8AnDwJaPJIwMmzAScPCZw8LWjy2MDJ84MmDxKaPFFo8mihyTOGJg8bmjx14PP4wclzSABWUDggthsAAPBYAJ0BKpAAkAA+ORSIQyIhIRs8XiggA4S2AF2c138A5jS2nUf5z+33sWVH+y/2j9Tf3P9p/lH1hRa+53+Z93fwx9SP6F9gX9av1466v7heor9lf2f96P0S/3n7YPkD/p/+66xf92/YA/Y301f3B+C/+v/739yvgO/Yv/7ewB/6vUA/8/qAdi15XbIPx76Z/I/lzy1erP+D6JfzP8Cfpv8H+6XtH/n/y79Gfl3/d+oL+U/yr/O/ll70XoneW2u9A72e+o/7n+//un/ffUw/wPRz7P/7T3Av51/T/9/5Xvhlen+wF/NP7//x/8B+T30w/2P/Z/zf5ne3f85/yv/k/z/wDfyr+uf8f+//5T/2/5v53/aL+7fs1fuM7AJ7qf1YKa3iumvf1AX16eqUpa+aJw5ObLf9+6gU8vuqklks2gJF+7bxUp5JHABKWXWGBfrfhDj2Lq61NTH9udJ92qnOD/7Gn1sZ1WrUp0kHg7Dg7f/7ml84NlLYCBqDhKM2RemMsaHRoVXjWzjXR669MKl8FRk4aT+0Nn5sQxa1fa3sZCY9eYM02un/uN9wp6leSzWY7RZfEAFWlXiFjNgkVe7YDzuamTkG8UJBpKJjTsTdIrf0zSa/RF98vWn3jK77rHBe0sizEibnAmsaMYI5Kdrh/r+mVYoa2+snHlDS5TrskU739EPjyqD1EunlIph1tgKKPB8pJKRDjdY+vf9b+xCD+FUUJvJe0bzZeDzxAHwlzb3NkMRyG/H62nEwLUTXJE2PppALnubxMW8V6XjXqMD9vvPeC2a2MYoA/STcFUKWboCWIuGF+H5xRUIdZHnPDPpM/bkYsJBxUgpF5T5iYLSuuNlIOiFdn9ILdBlN7C0DyftpuHsgtaTvsx1EkdXvuPRPYTrrXuOFhGUnDkb7yEu6JA/9YpEf7uRU59B6lncFX7B5sLholF6FGLf//3llw+bi+jAD+/yWiu2YtNtCv0BfF8nHKdsPEeEfluoyOaqDS3MH2tpCrYnwFGlu+u1Z/YLPPHAStILEmqVYCu04WQV6jLTVPe+SrBrvga/gajRojbcobDjJPFJL4nO/7DZUoh24oJDJ1g8LSOMetHZOik28rX87OcdnAqj2so02IHhzlmS5aHnFs/yKECZ/HAuwcPnXXM4g7BmHSdP/7z314KZCL+M+B/+OrjE03lO44ZgEEWh/xPs+KA6sVmwDMEZVpmDoV1zi80wdUWkoMtofdmR5MPf9vMpRQK91cmD2dRAhdRjBsEfkrTTFBSVgFtvql5IqWEr52nSDwE3O/amkcIqxE6NZl8ulcW0v8xvFLVW8/lUrK6/pW15XvTghifHuOZH7Vwr3+bPPn/YcW1/OKCb9tBezcp20Vcn1EXxEckK/y2wF9/p4TS+FH/Rk1XfJvJ894s4i38ohiHtO/kkUpaAAjMWPIkDPMksPf0fPM7XHTBtCd7wii+H2JBV1TliPFZcU3fgnbtZuBmEw4EShqhv/ZYSUvLjauYhFa5jDZhsQig02HF5cBIH639FxIrnbOxIRVnSSvjnCscYCJfHWtDasRCwI8B3OGdk/sjBYXXh/RdtrdIHsFr+yAucKkR/pAfpZrBWrwULP59u4/bOaVv+T0oCHqsUMVb9slBxELAACrKPf/hmCMjoCJZ88m0MCxYB3648mX94/HfxlVeA7oL0bLeCCbBEEcZvG3eCezWlfagRPN6gY4w8NpQfbGK4GJIpSpAag2akTvtK0hxQofSP1RkykuJfjg3urb34o8bjlh7HIEXj2FzwgllqvbU8RIYH5KJJ31e9fZ1G34di9UeBiuv8uSJPOjmO135t1lV3YWMAEO2R0/qiGhtT1UPwnTpRNSX0OIYe6084JgY7bb442P4D83xhiYATu/5HcASPqb1t+nYGD5PrSw/Jy49rkfIfBVTv1k3gwr9rRdEO+wCc51xjvCUw9S3faVhdaYOW3VhiGchFFZ1j4gz9ueWptr4y8ArnFEiydCISmydoGCjFJBi7SDyo7SwKTLm1FhX/F0B2g/VuSSXb/NBnMKxMEkQxtTpKQ3I8R+5Q6AyEnejReN6mnyeOPzDlxS5iLHZteMhjOvMrTNR25wynK1gsolhvsm+gUGq89Y+AIbrxDbxPUxpvGnxTzMdXLLcuW3ZQg7eNbA8xgq82sU9mK2ExZyaOMTOy6Ev/O8/zyiVQ09of/fEz85w024DysL7V1BXh3O7y7lr1tfBMPBZxn6ahT6md9buPH866Ap+VolXNcBKobUczi0DlMSswYbYz7YkcymFkn5sWFlnqvtlElrzWtnC6Z6T1tchCrANUw1ZWgjYzvyEWwHzIeRmgqs0+gzYvLbqYlFUUoKHDI0zyP13SEowVdIvIqtQZILpwkihsI5HmCmyZCZ1vi3+AowhaS3gTZwaZ/MkDHJrve/4F/JD4trTu8CuLnH466l9nyHlBhTNZ07YsDFJYPdEqD7KoLwsVljc5YNAJlqZ8IIeTc/0VOg2Pry6O+BUl4FlnB+th1SfhaWthRs3FHfzYncdMf4wywHbO/9IJPAOY0N0W/saLV6W9vKz7BT+oPDpCgoemzNO41K0ZqeEpfjyEyZTqI18mTl1Xog76dCr14RAEskrRM/rCT7gqNYTdiShj+tgjEssNK2UM3XjVvn22jz2aLK+nS3WRGkAsmwLBgK/wIBE25+ES/BTD9DUMePLN8ZFgOkNkfbb5zvpjUZ1oEbjxDguW9OwgRr5cheRF73mw7wCGZx8nKhCHB21jEdszPtJpCiGwtMEY079g0V4Wpf6wnQjSCN6jR1abX6qI5uG5rtKRwcxwdrTa2XtXi0BpA5K4MMi1jdV36x2QDuJWzoxYDzEzv+iMuMf20cz7IByJbBcTGq5f9nYCp+A0ScLUstNfJYakyVUfukjCLpL2fFcuUIXCqJexBgvs+xWWqVKQoc5BVlAp0KTL+WbhkkLwEHZ8qmn/1Se/6uqb7Cnpd8TX5tXP2G0ZAjr7goKZfFn78Sw82g8ZVcoFg+PrebbOtQ6lb7sAgYCSgeMzvFBFz/uEGa5KDVJkAaW6ZFLniuRJAALnyUkMkqGLu5arG4Ly6EsENFgkwGc+wyMEGgsWQIeMs1AW4lbEPG2xAGyQRkPeV5OR3g0oZNryPCiHjTwihJMYjznli6gqIUdOg+rSEDQ+zV8SB97vV7I4x9EXIpQz7pWS6xIkhN55yIc1KMUXXzcT0ffDSl3T0iDGCFbtCka+0KY/pcmBlvkCya2M+pupJWeoTta6vcfslwsrmR5tujfnoE1hMPQFR9DNu/FQtsffyJqOGOd3MGH1me8g1nscHzhWUnJvcchc+wWCW/BaxStZGcgKuoobMYkTN3xJci5FarPuEOl4GX4BIP6UksAU0InGQKmULF+BIH2S1DpvuRfiJyyvDscmdPv5o+Nbj1iIC6gQPD5+JXvGlMgHu8mx8llGYOgDhklaKPZz43dn23UPsXTjoAMBNQacyNmWuxB89QVlPhpEbglhO+FAkfd9HT2bN64oGqe5i+vG5iosrL5mMg1aZoWwE4CsfUvgLxf026T8ySmiSmnoVXnO2tS1+wi5QcRua20ZfeHQgiHcwRjzqj7gTwxJaEPavAISg/ghX8tZOHvlaKF1fgDTvmX3Q5L/GJnz7nmJtEaxl5HpIC7vAw0txySUveLiU/nI2CDBhP5/nQw9qmH5mMj5WWwVYHeq2qz8gBYLPjRPX/5gvlyB7Nt4M8ZJQx8M034u2uDbAiOi1XQLMJy5yh9AWl/tN0Z6vZP2uE/VlxcPpcObew9oEcVR1tv0Sle1pYalv17c2g4x9U0P3KusM/jGk09Jm0r5e1y7cW4uO+u978B4f+L9tKjH4/dD9eXpA3r48uM82K5eG+W0cveQ74WwXf++svfdv69e5q762jP+Hmv+7wGvI3m+a3rTvf/YJq5mef+Lruv+sE4N7kfeQ8t0r4d86q5/Z1rZ5zVb5f9pWn/6d40gX1aBdYWHslDNa+F4s8ywdkx75ynZm75vTYvCnT6EBx6d5Iq7rkcQhu66/YlrrcTSPO7cusvXp7b0i7P171rK0n47rK/g1PtvvO52L4F5yRfd1y+vP0d3u9o4Tz9J6g3+57f92r4Hqf87jVff6p3w1m+e53d86Wf7yO7lq4Vf8o7v87h4qLhuUhnS2nO5w79jK4+hFfvI24n369q/J3Xw+2zX5vKq/Tz7Kx17Wf8d0P//eYf+Lrv9n/jrf0W/3//d9v/37d7/e259e8x4N2uU9zTvv4m0+548f334vVpY/rN87nQffh55p7+R8v/99f+v9T/v9Ovv4P+r97w/b8H8+wB///UAAD++gAAgAAgAAAAAAAgAAAAAAAgAA=="
-];
-
-let ACCOUNTS = store.gget('accounts', []);
-function findAcc(email){ return ACCOUNTS.find(a => a.email.toLowerCase() === email.toLowerCase()); }
-
-function switchTab(mode){
-  $$('.tab').forEach(b => b.classList.remove('active'));
-  $(`.tab[data-mode="${mode}"]`).classList.add('active');
-  const isUp = mode === 'signup';
-  $('#pass2').classList.toggle('hidden', !isUp);
-  $('#forgotBtn').classList.toggle('hidden', isUp);
-  $('#enterBtn').textContent = isUp ? 'CREATE MY SPACE' : 'ENTER COSMIC SPACE';
-  $('#lockMsg').textContent = '';
-  $('#setupMsg').textContent = '';
-}
-
-$$('.tab').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.mode)));
-
-const urlP = new URLSearchParams(location.search);
-const refId = urlP.get('ref');
-if(refId){
-  const foundRef = ACCOUNTS.find(a => a.id === refId);
-  if(foundRef){
-    switchTab('signup');
-    const rb = $('#refBanner');
-    rb.textContent = `✨ You were invited by ${foundRef.id}! Sign up to join them in Cosmic Space.`;
-    rb.classList.remove('hidden');
-  }
-}
-
-$('#forgotBtn').onclick = () => {
-  const email = $('#email').value.trim();
-  if(!email){ $('#lockMsg').textContent = 'Please enter your email above first.'; return; }
-  const acc = findAcc(email);
-  if(!acc){ $('#lockMsg').textContent = 'No account found with this email.'; return; }
-  askConfirm(`Send password hint to ${email}?\n\nPassword hint: Your password starts with "${acc.pass[0]}..." and is ${acc.pass.length} characters long.`, 'Show Hint').then(ok => {
-    if(ok) toast('Password Hint', `Starts with "${acc.pass[0]}...", length ${acc.pass.length}`);
-  });
-};
-
-function renderSetupGrid(gridEl, selImgRef){
-  gridEl.innerHTML = '';
-  AVATARS.forEach((src, idx) => {
-    const div = document.createElement('div');
-    div.className = 'av' + (selImgRef.val === src ? ' sel' : '');
-    div.innerHTML = `<img src="${src}" alt="avatar ${idx+1}" loading="lazy">`;
-    div.onclick = () => {
-      selImgRef.val = src;
-      gridEl.querySelectorAll('.av').forEach(el => el.classList.remove('sel'));
-      div.classList.add('sel');
-    };
-    gridEl.appendChild(div);
-  });
-}
-
-const regState = { email:'', pass:'', avatar: AVATARS[0] };
-renderSetupGrid($('#setupGrid'), { get val(){return regState.avatar}, set val(v){regState.avatar=v} });
-
-$('#enterBtn').onclick = () => {
-  const email = $('#email').value.trim().toLowerCase();
-  const pass = $('#pass').value;
-  const isUp = $('.tab.data-mode') ? $('.tab.data-mode').classList.contains('active') : $('.tab[data-mode="signup"]').classList.contains('active');
-
-  if(!email || !email.includes('@') || !email.includes('.')){ $('#lockMsg').textContent = 'Please enter a valid email address.'; return; }
-  if(!pass || pass.length < 6){ $('#lockMsg').textContent = 'Password must be at least 6 characters.'; return; }
-
-  const existing = findAcc(email);
-
-  if(isUp){
-    if(existing){ $('#lockMsg').textContent = 'An account with this email already exists. Please login.'; switchTab('login'); return; }
-    const p2 = $('#pass2').value;
-    if(pass !== p2){ $('#lockMsg').textContent = 'Passwords do not match.'; return; }
-    regState.email = email;
-    regState.pass = pass;
-    $('#stepCreds').classList.add('hidden');
-    $('#stepSetup').classList.remove('hidden');
-    $('#uid').value = email.split('@')[0].toLowerCase().replace(/[^a-z0-9_]/g, '_').slice(0,20);
-    checkUidValidity($('#uid').value);
-    renderSetupGrid($('#setupGrid'), { get val(){return regState.avatar}, set val(v){regState.avatar=v} });
-    return;
-  }
-
-  if(!existing){ $('#lockMsg').textContent = 'No account found with this email. Please Sign Up.'; return; }
-  if(existing.pass !== pass){ $('#lockMsg').textContent = 'Incorrect password.'; $('#lockbox').classList.add('shake'); setTimeout(()=>$('#lockbox').classList.remove('shake'),400); return; }
-
-  loginAccount(existing);
-};
-
-$('#setupBack').onclick = () => {
-  $('#stepSetup').classList.add('hidden');
-  $('#stepCreds').classList.remove('hidden');
-};
-
-const uidInput = $('#uid');
-const uidHint = $('#uidHint');
-const uidSugg = $('#uidSugg');
-
-function checkUidValidity(val){
-  const clean = val.toLowerCase().replace(/[^a-z0-9_]/g, '');
-  if(clean !== val) uidInput.value = clean;
-  if(clean.length < 3){
-    uidHint.textContent = 'User ID must be at least 3 characters.'; uidHint.className = 'bad'; return false;
-  }
-  const taken = ACCOUNTS.some(a => a.id === clean);
-  if(taken){
-    uidHint.textContent = 'User ID is already taken. Try another.'; uidHint.className = 'bad';
-    showUidSuggestions(clean);
-    return false;
-  }
-  uidHint.textContent = '✓ User ID is available!'; uidHint.className = 'ok';
-  uidSugg.innerHTML = '';
-  return true;
-}
-
-function showUidSuggestions(base){
-  uidSugg.innerHTML = '';
-  const suggs = [base + Math.floor(Math.random()*90+10), base + '_cosmic', 'my_' + base];
-  suggs.forEach(s => {
-    if(!ACCOUNTS.some(a => a.id === s)){
-      const btn = document.createElement('button');
-      btn.type = 'button'; btn.className = 'sugg'; btn.textContent = s;
-      btn.onclick = () => { uidInput.value = s; checkUidValidity(s); };
-      uidSugg.appendChild(btn);
-    }
-  });
-}
-
-uidInput.oninput = e => checkUidValidity(e.target.value);
-
-$('#setupBtn').onclick = () => {
-  const id = uidInput.value.trim().toLowerCase();
-  if(!checkUidValidity(id)){ $('#setupMsg').textContent = 'Please choose a valid & available User ID.'; return; }
-
-  const newAcc = {
-    id: id,
-    email: regState.email,
-    pass: regState.pass,
-    avatar: regState.avatar,
-    since: new Date().toISOString(),
-    lastUidChange: new Date().toISOString(),
-    invitedBy: refId || null
-  };
-
-  ACCOUNTS.push(newAcc);
-  store.gset('accounts', ACCOUNTS);
-  loginAccount(newAcc);
-  toast('Welcome to Cosmic Space!', 'Your personal universe is ready.');
-};
-
-function loginAccount(acc){
-  CURRENT = acc;
-  ss.set('active_user', acc.id);
-  $('#lock').classList.add('hidden');
-  $('#app').classList.remove('hidden');
-  initApp();
-}
-
-const activeId = ss.get('active_user');
-if(activeId){
-  const found = ACCOUNTS.find(a => a.id === activeId);
-  if(found) loginAccount(found);
-}
-
-$('#logoutBtn').onclick = () => {
-  ss.del('active_user');
-  CURRENT = null;
-  $('#app').classList.add('hidden');
-  $('#lock').classList.remove('hidden');
-  $('#stepSetup').classList.add('hidden');
-  $('#stepCreds').classList.remove('hidden');
-  $('#pass').value = '';
-  $('#lockMsg').textContent = '';
-};
-
-const skyCvs = $('#sky');
-const ctx = skyCvs.getContext('2d');
-let stars = [], nebulae = [], comets = [];
-
-function resizeSky(){
-  skyCvs.width = window.innerWidth;
-  skyCvs.height = window.innerHeight;
-  initSky();
-}
-window.onresize = resizeSky;
-
-function initSky(){
-  stars = [];
-  const count = Math.floor((skyCvs.width * skyCvs.height) / 4500);
-  for(let i=0; i<count; i++){
-    stars.push({
-      x: Math.random() * skyCvs.width,
-      y: Math.random() * skyCvs.height,
-      r: Math.random() * 1.6 + 0.4,
-      alpha: Math.random(),
-      speed: Math.random() * 0.015 + 0.005,
-      pulse: Math.random() * Math.PI
-    });
-  }
-  nebulae = [
-    {x: skyCvs.width*0.2, y: skyCvs.height*0.3, r: skyCvs.width*0.4, color: 'rgba(139,92,246,0.12)'},
-    {x: skyCvs.width*0.8, y: skyCvs.height*0.7, r: skyCvs.width*0.45, color: 'rgba(232,121,249,0.10)'},
-    {x: skyCvs.width*0.5, y: skyCvs.height*0.5, r: skyCvs.width*0.5, color: 'rgba(103,232,249,0.08)'}
-  ];
-}
-resizeSky();
-
-function drawSky(){
-  ctx.clearRect(0,0,skyCvs.width, skyCvs.height);
-  
-  const bg = ctx.createRadialGradient(skyCvs.width/2, skyCvs.height/2, 50, skyCvs.width/2, skyCvs.height/2, Math.max(skyCvs.width, skyCvs.height));
-  bg.addColorStop(0, '#181537');
-  bg.addColorStop(1, '#0B0A1A');
-  ctx.fillStyle = bg;
-  ctx.fillRect(0,0,skyCvs.width, skyCvs.height);
-
-  nebulae.forEach(n => {
-    const grad = ctx.createRadialGradient(n.x, n.y, 10, n.x, n.y, n.r);
-    grad.addColorStop(0, n.color);
-    grad.addColorStop(1, 'transparent');
-    ctx.fillStyle = grad;
-    ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI*2); ctx.fill();
-  });
-
-  const mx = skyCvs.width - 90, my = 110;
-  ctx.save();
-  ctx.beginPath();
-  ctx.strokeStyle = 'rgba(167,139,250,0.3)';
-  ctx.lineWidth = 1.5;
-  ctx.ellipse(mx, my, 52, 18, Math.PI/6, 0, Math.PI*2);
-  ctx.stroke();
-
-  const mg = ctx.createRadialGradient(mx-10, my-10, 5, mx, my, 35);
-  mg.addColorStop(0, '#FFFDF0');
-  mg.addColorStop(0.5, '#FDE047');
-  mg.addColorStop(1, '#A78BFA');
-  ctx.fillStyle = mg;
-  ctx.beginPath(); ctx.arc(mx, my, 32, 0, Math.PI*2); ctx.fill();
-  ctx.restore();
-
-  stars.forEach(s => {
-    s.pulse += s.speed;
-    const a = Math.abs(Math.sin(s.pulse)) * 0.8 + 0.2;
-    ctx.fillStyle = `rgba(255,255,255,${a})`;
-    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
-  });
-
-  requestAnimationFrame(drawSky);
-}
-requestAnimationFrame(drawSky);
-
-const SYNC_KEYS = ['moods', 'diary', 'tasks', 'cards', 'mail'];
-
-function initApp(){
-  $('#pillName').textContent = CURRENT.id;
-  $('#profilePill').innerHTML = `<img src="${CURRENT.avatar}" alt="avatar"><span>${esc(CURRENT.id)}</span>`;
-  
-  setupNavigation();
-  initMood();
-  initInvite();
-  initDiary();
-  initTasks();
-  initGreetStudio();
-  initMail();
-  initProfileModal();
-}
-
-function setupNavigation(){
-  $$('.chip[data-view]').forEach(btn => {
-    btn.onclick = () => {
-      const v = btn.dataset.view;
-      $$('.view').forEach(el => el.classList.add('hidden'));
-      $(`#v-${v}`).classList.remove('hidden');
-      $$('.guide .chip').forEach(c => c.classList.remove('active'));
-      if(btn.closest('.guide')) btn.classList.add('active');
-      window.scrollTo({top:0, behavior:'smooth'});
-    };
-  });
-  $$('.view').forEach(el => el.classList.add('hidden'));
-  $('#v-home').classList.remove('hidden');
-  $('#welcomeTxt').textContent = `Welcome back, ${CURRENT.id}!`;
-}
-
-const MOODS = [
-  {e:'✨', w:'Magical', msg:'Your aura is shining bright with cosmic energy today!'},
-  {e:'🚀', w:'Energetic', msg:'Ready to launch new ideas and conquer the stars!'},
-  {e:'🌙', w:'Peaceful', msg:'Calm as the moonlit night. Enjoy your serenity.'},
-  {e:'🪐', w:'Thoughtful', msg:'Orbiting deep thoughts and wonderful possibilities.'},
-  {e:'🔥', w:'Unstoppable', msg:'Burning brighter than a supernova! Nothing can stop you.'}
-];
-
-function initMood(){
-  const mContainer = $('#moods');
-  mContainer.innerHTML = '';
-  MOODS.forEach((m, idx) => {
-    const div = document.createElement('div');
-    div.className = 'mood';
-    div.innerHTML = `<span class="e">${m.e}</span><span class="w">${m.w}</span>`;
-    div.onclick = () => saveMood(idx);
-    mContainer.appendChild(div);
-  });
-  loadMoodHistory();
-}
-
-function saveMood(idx){
-  const history = store.get('moods', {});
-  const tk = todayKey();
-  history[tk] = idx;
-  store.set('moods', history);
-  loadMoodHistory();
-  toast('Mood recorded', MOODS[idx].w + ' ' + MOODS[idx].e);
-}
-
-function loadMoodHistory(){
-  const history = store.get('moods', {});
-  const tk = todayKey();
-  const selIdx = history[tk];
-  const moodEls = $('#moods').children;
-  [...moodEls].forEach((el, i) => el.classList.toggle('sel', i === selIdx));
-  
-  if(selIdx !== undefined){
-    $('#moodMsg').textContent = MOODS[selIdx].msg;
-  } else {
-    $('#moodMsg').textContent = 'Tap an emoji above to log your cosmic mood today.';
-  }
-
-  const histEl = $('#moodHist');
-  histEl.innerHTML = '';
-  const entries = Object.entries(history).sort().reverse().slice(0,5);
-  if(entries.length){
-    const spanT = document.createElement('span');
-    spanT.textContent = 'Recent:';
-    histEl.appendChild(spanT);
-    entries.forEach(([date, idx]) => {
-      const sp = document.createElement('span');
-      sp.textContent = `${date}: ${MOODS[idx].e} ${MOODS[idx].w}`;
-      histEl.appendChild(sp);
-    });
-  }
-}
-
-function initInvite(){
-  const link = location.origin + location.pathname + '?ref=' + CURRENT.id;
-  $('#invLink').value = link;
-  const text = `Hey! Join me on Cosmic Space — a magical personal universe for diaries, tasks, secret mail and greeting cards: ${link}`;
-
-  $('#invCopy').onclick = () => {
-    navigator.clipboard.writeText(link).then(() => toast('Copied!', 'Invite link copied to clipboard.'));
-  };
-  $('#invWa').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
-  $('#invShare').onclick = () => {
-    if(navigator.share){
-      navigator.share({title:'Cosmic Space', text:text, url:link}).catch(()=>{});
-    } else {
-      navigator.clipboard.writeText(link);
-      toast('Link copied', 'Sharing not supported on this browser, link copied.');
-    }
-  };
-}
-
-function initDiary(){
-  $('#dSave').onclick = () => {
-    const title = $('#dTitle').value.trim();
-    const text = $('#dText').value.trim();
-    if(!text){ toast('Empty entry', 'Please write something in your diary.'); return; }
-    const list = store.get('diary', []);
-    list.unshift({id: Date.now(), title: title || 'Untitled Memory', text, time: new Date().toISOString()});
-    store.set('diary', list);
-    $('#dTitle').value = '';
-    $('#dText').value = '';
-    renderDiary();
-    toast('Diary Saved', 'Your memory is securely stored in the cosmos.');
-  };
-  renderDiary();
-}
-
-function renderDiary(){
-  const list = store.get('diary', []);
-  const container = $('#dList');
-  if(!list.length){
-    container.innerHTML = '<div class="empty">No diary entries yet. Write your first thought above!</div>';
-    return;
-  }
-  container.innerHTML = '';
-  list.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'item';
-    div.innerHTML = `
-      <div class="row">
-        <h4>${esc(item.title)}</h4>
-        <div style="display:flex;gap:8px;align-items:center">
-          <small>${niceDate(item.time)}</small>
-          <button class="btn ghost small" style="padding:4px 8px;font-size:13px" data-del="${item.id}">Delete</button>
-        </div>
-      </div>
-      <p>${esc(item.text)}</p>
-    `;
-    div.querySelector('button').onclick = async () => {
-      if(await askConfirm('Delete this diary entry?','Delete')){
-        const updated = store.get('diary',[]).filter(x => x.id !== item.id);
-        store.set('diary', updated);
-        renderDiary();
-        toast('Deleted','Diary entry removed.');
-      }
-    };
-    container.appendChild(div);
-  });
-}
-
-function initTasks(){
-  $('#tAdd').onclick = () => {
-    const name = $('#tName').value.trim();
-    if(!name){ toast('Empty task', 'Please enter a task name.'); return; }
-    const list = store.get('tasks', []);
-    list.unshift({id: Date.now(), name, done:false, time: new Date().toISOString()});
-    store.set('tasks', list);
-    $('#tName').value = '';
-    renderTasks();
-  };
-  renderTasks();
-}
-
-function renderTasks(){
-  const list = store.get('tasks', []);
-  const container = $('#tList');
-  if(!list.length){
-    container.innerHTML = '<div class="empty">No active tasks. Plan your day above!</div>';
-    return;
-  }
-  container.innerHTML = '';
-  list.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'item';
-    div.style.opacity = item.done ? '0.6' : '1';
-    div.innerHTML = `
-      <div class="row">
-        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;flex:1;min-width:0">
-          <input type="checkbox" ${item.done?'checked':''} style="width:20px;height:20px;accent-color:var(--gold);margin:0;cursor:pointer">
-          <span style="font-size:17px;word-break:break-word;text-decoration:${item.done?'line-through':'none'}">${esc(item.name)}</span>
-        </label>
-        <button class="btn ghost small" style="padding:4px 8px;font-size:13px">Delete</button>
-      </div>
-    `;
-    div.querySelector('input').onchange = (e) => {
-      item.done = e.target.checked;
-      store.set('tasks', list);
-      renderTasks();
-    };
-    div.querySelector('button').onclick = () => {
-      const updated = store.get('tasks',[]).filter(x => x.id !== item.id);
-      store.set('tasks', updated);
-      renderTasks();
-    };
-    container.appendChild(div);
-  });
-}
-
-const G_TEMPLATES = [
-  {id: 'galaxy', name: 'Galaxy Dream', bg1: '#181537', bg2: '#3b0764', accent: '#FDE047', textCol: '#F4F0FF', thumb: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEwIDE1Ij48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTUiIGZpbGw9IiMxODE1MzciLz48Y2lyY2xlIGN4PSI1IiBjeT0iNy.hyb3IiByPSIzIiBmaWxsPSIjRkRFMDQ3Ii8+PC9zdmc+'},
-  {id: 'aurora', name: 'Aurora Glow', bg1: '#064e3b', bg2: '#0f172a', accent: '#67E8F9', textCol: '#F4F0FF', thumb: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEwIDE1Ij48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTUiIGZpbGw9IiMwNjRlM2IiLz48Y2lyY2xlIGN4PSI1IiBjeT0iNy41IiByPSIzIiBmaWxsPSIjNjdFOGY5Ii8+PC9zdmc+'},
-  {id: 'sunset', name: 'Cosmic Sunset', bg1: '#4c0519', bg2: '#3b0764', accent: '#E879F9', textCol: '#F4F0FF', thumb: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEwIDE1Ij48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTUiIGZpbGw9IiA0YzA1MTkiLz48Y2lyY2xlIGN4PSI1IiBjeT0iNy41IiByPSIzIiBmaWxsPSIjRTg3OUY5Ii8+PC9zdmc+'},
-  {id: 'gold', name: 'Royal Gold', bg1: '#111827', bg2: '#1f2937', accent: '#FDE047', textCol: '#FDE047', thumb: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDEwIDE1Ij48cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTUiIGZpbGw9IiMxMTE4MjciLz48Y2lyY2xlIGN4PSI1IiBjeT0iNy41IiByPSIzIiBmaWxsPSIjRkRFMDQ3Ii8+PC9zdmc+'}
-];
-let selTpl = G_TEMPLATES[0];
-let activeCardData = null;
-
-function initGreetStudio(){
-  const row = $('#tplRow');
-  row.innerHTML = '';
-  G_TEMPLATES.forEach((t, i) => {
-    const div = document.createElement('button');
-    div.type = 'button';
-    div.className = 'tpl' + (i===0?' sel':'');
-    div.innerHTML = `<img src="${t.thumb}" alt="${t.name}"><b>${t.name}</b><small>Celestial Theme</small>`;
-    div.onclick = () => {
-      row.querySelectorAll('.tpl').forEach(el => el.classList.remove('sel'));
-      div.classList.add('sel');
-      selTpl = t;
-    };
-    row.appendChild(div);
-  });
-
-  $('#gSample').onclick = () => {
-    $('#gName').value = 'Priya';
-    $('#gMsg').value = 'May your birthday be filled with infinite joy, starlight dreams, and wonderful adventures across the universe. Wishing you the happiest of years ahead!';
-    $('#gFrom').value = CURRENT.id;
-  };
-
-  let isFlipped = false;
-  $('#gFlip').onclick = () => {
-    isFlipped = !isFlipped;
-    $('#flip').classList.toggle('flipped', isFlipped);
-    $('#faceTag').textContent = isFlipped ? 'Inside' : 'Front';
-  };
-
-  $('#gBtn').onclick = () => {
-    const name = $('#gName').value.trim();
-    const msg = $('#gMsg').value.trim();
-    const from = $('#gFrom').value.trim();
-    if(!name || !msg){ toast('Incomplete card', 'Please enter recipient name and wish message.'); return; }
-
-    activeCardData = {id: Date.now(), tpl: selTpl.id, name, msg, from, time: new Date().toISOString()};
-    generateCardCanvases(activeCardData);
-    $('#gPrev').classList.remove('hidden');
-    isFlipped = false;
-    $('#flip').classList.remove('flipped');
-    $('#faceTag').textContent = 'Front';
-
-    const saved = store.get('cards', []);
-    saved.unshift(activeCardData);
-    store.set('cards', saved);
-    renderSavedCards();
-    toast('Card Generated!', 'Previewing your custom greeting card.');
-  };
-
-  $('#gDown').onclick = () => {
-    if(!activeCardData) return;
-    const canvas = isFlipped ? $('#cInside') : $('#cFront');
-    const link = document.createElement('a');
-    link.download = `cosmic_card_${activeCardData.name}.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-    toast('Downloaded', 'Card saved as image.');
-  };
-
-  $('#gShare').onclick = () => {
-    if(!activeCardData) return;
-    const text = `🎉 Birthday Greeting for ${activeCardData.name}!\n\n"${activeCardData.msg}"\n\n- With love from ${activeCardData.from || 'Someone special'}\n\nCreated with Cosmic Space ✨`;
-    if(navigator.share){
-      navigator.share({title:'Birthday Card', text}).catch(()=>{});
-    } else {
-      navigator.clipboard.writeText(text);
-      toast('Copied', 'Wish message copied to clipboard.');
-    }
-  };
-
-  renderSavedCards();
-}
-
-function generateCardCanvases(data){
-  const tpl = G_TEMPLATES.find(t => t.id === data.tpl) || G_TEMPLATES[0];
-  const cF = $('#cFront');
-  const cI = $('#cInside');
-  const W = 540, H = 833;
-  cF.width = W; cF.height = H;
-  cI.width = W; cI.height = H;
-
-  const fCtx = cF.getContext('2d');
-  const grad1 = fCtx.createLinearGradient(0, 0, W, H);
-  grad1.addColorStop(0, tpl.bg1); grad1.addColorStop(1, tpl.bg2);
-  fCtx.fillStyle = grad1; fCtx.fillRect(0,0,W,H);
-
-  fCtx.fillStyle = '#FFFFFF';
-  for(let i=0; i<60; i++){
-    const rx = Math.random() * W, ry = Math.random() * H, rr = Math.random()*2+0.5;
-    fCtx.globalAlpha = Math.random()*0.7 + 0.3;
-    fCtx.beginPath(); fCtx.arc(rx, ry, rr, 0, Math.PI*2); fCtx.fill();
-  }
-  fCtx.globalAlpha = 1;
-
-  fCtx.strokeStyle = tpl.accent; fCtx.lineWidth = 3;
-  fCtx.strokeRect(30, 30, W-60, H-60);
-  fCtx.strokeStyle = 'rgba(255,255,255,0.2)'; fCtx.lineWidth = 1;
-  fCtx.strokeRect(38, 38, W-76, H-76);
-
-  fCtx.fillStyle = 'rgba(24,21,55,0.6)';
-  fCtx.beginPath(); fCtx.roundRect(W/2 - 180, H/2 - 140, 360, 280, 20); fCtx.fill();
-  fCtx.strokeStyle = tpl.accent; fCtx.lineWidth = 2; fCtx.stroke();
-
-  fCtx.fillStyle = tpl.accent;
-  fCtx.font = 'bold 36px system-ui, sans-serif';
-  fCtx.textAlign = 'center';
-  fCtx.fillText('★ HAPPY BIRTHDAY ★', W/2, H/2 - 70);
-
-  fCtx.fillStyle = '#FFFFFF';
-  fCtx.font = 'bold 44px system-ui, sans-serif';
-  wrapText(fCtx, data.name, W/2, H/2, 320, 52);
-
-  fCtx.fillStyle = 'rgba(244,240,255,0.75)';
-  fCtx.font = '20px system-ui, sans-serif';
-  fCtx.fillText('A magical wish across the stars', W/2, H/2 + 90);
-
-  const iCtx = cI.getContext('2d');
-  const grad2 = iCtx.createLinearGradient(0, 0, W, H);
-  grad2.addColorStop(0, tpl.bg2); grad2.addColorStop(1, tpl.bg1);
-  iCtx.fillStyle = grad2; iCtx.fillRect(0,0,W,H);
-
-  iCtx.strokeStyle = tpl.accent; iCtx.lineWidth = 2;
-  iCtx.strokeRect(30, 30, W-60, H-60);
-
-  iCtx.fillStyle = tpl.accent;
-  iCtx.font = 'bold 28px system-ui, sans-serif';
-  iCtx.textAlign = 'center';
-  iCtx.fillText('Dearest ' + data.name + ',', W/2, 100);
-
-  iCtx.fillStyle = '#F4F0FF';
-  iCtx.font = '24px system-ui, sans-serif';
-  iCtx.textAlign = 'left';
-  wrapTextLeft(iCtx, data.msg, 70, 170, W-140, 36);
-
-  iCtx.fillStyle = tpl.accent;
-  iCtx.font = 'italic bold 24px system-ui, sans-serif';
-  iCtx.textAlign = 'right';
-  iCtx.fillText('— ' + (data.from || 'Cosmic Friend'), W - 70, H - 100);
-}
-
-function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
-  const words = text.split(' ');
-  let line = '';
-  for(let n = 0; n < words.length; n++) {
-    const testLine = line + words[n] + ' ';
-    const metrics = ctx.measureText(testLine);
-    const testWidth = metrics.width;
-    if (testWidth > maxWidth && n > 0) {
-      ctx.fillText(line, x, y);
-      line = words[n] + ' ';
-      y += lineHeight;
-    } else {
-      line = testLine;
-    }
-  }
-  ctx.fillText(line, x, y);
-}
-
-function wrapTextLeft(ctx, text, x, y, maxWidth, lineHeight) {
-  const words = text.split(' ');
-  let line = '';
-  for(let n = 0; n < words.length; n++) {
-    const testLine = line + words[n] + ' ';
-    const metrics = ctx.measureText(testLine);
-    const testWidth = metrics.width;
-    if (testWidth > maxWidth && n > 0) {
-      ctx.fillText(line, x, y);
-      line = words[n] + ' ';
-      y += lineHeight;
-    } else {
-      line = testLine;
-    }
-  }
-  ctx.fillText(line, x, y);
-}
-
-function renderSavedCards(){
-  const list = store.get('cards', []);
-  const container = $('#gSaved');
-  if(!list.length){
-    container.innerHTML = '<div class="empty">No saved greeting cards yet.</div>';
-    return;
-  }
-  container.innerHTML = '';
-  list.forEach(item => {
-    const tpl = G_TEMPLATES.find(t => t.id === item.tpl) || G_TEMPLATES[0];
-    const div = document.createElement('div');
-    div.className = 'item saved';
-    div.innerHTML = `
-      <img src="${tpl.thumb}" alt="card">
-      <div class="info">
-        <h4>To: ${esc(item.name)}</h4>
-        <small>${niceDate(item.time)} • Theme: ${tpl.name}</small>
-      </div>
-      <div class="btns">
-        <button class="btn small" data-load="${item.id}">View</button>
-        <button class="btn ghost small" data-del="${item.id}">✕</button>
-      </div>
-    `;
-    div.querySelector('[data-load]').onclick = () => {
-      activeCardData = item;
-      generateCardCanvases(item);
-      $('#gPrev').classList.remove('hidden');
-      $('#gName').value = item.name;
-      $('#gMsg').value = item.msg;
-      $('#gFrom').value = item.from;
-      window.scrollTo({top:$('#gPrev').offsetTop - 60, behavior:'smooth'});
-    };
-    div.querySelector('[data-del]').onclick = async () => {
-      if(await askConfirm('Delete this saved card?','Delete')){
-        const updated = store.get('cards',[]).filter(x => x.id !== item.id);
-        store.set('cards', updated);
-        renderSavedCards();
-        toast('Deleted','Greeting card removed.');
-      }
-    };
-    container.appendChild(div);
-  });
-}
-
-const MAIL_STORAGE_KEY = 'cs_global_mails';
-
-function getAllGlobalMails(){
-  try{ return JSON.parse(localStorage.getItem(MAIL_STORAGE_KEY)) || []; }catch(e){ return []; }
-}
-function saveGlobalMails(m){
-  try{ localStorage.setItem(MAIL_STORAGE_KEY, JSON.stringify(m)); }catch(e){}
-}
-
-function initMail(){
-  $('#mSend').onclick = () => {
-    const to = $('#mTo').value.trim().toLowerCase();
-    const msg = $('#mMsg').value.trim();
-    if(!to || !msg){ toast('Incomplete mail', 'Please enter recipient User ID and message.'); return; }
-    if(to === CURRENT.id){ toast('Cannot send to self', 'You cannot send secret mail to your own User ID.'); return; }
-
-    const allAccs = ACCOUNTS;
-    const recipient = allAccs.find(a => a.id === to);
-    if(!recipient){ toast('User not found', `No user with User ID "@${to}" exists in Cosmic Space.`); return; }
-
-    const mails = getAllGlobalMails();
-    mails.unshift({
-      id: Date.now(),
-      from: CURRENT.id,
-      fromAvatar: CURRENT.avatar,
-      to: to,
-      msg: msg,
-      time: new Date().toISOString(),
-      read: false
-    });
-    saveGlobalMails(mails);
-    $('#mTo').value = '';
-    $('#mMsg').value = '';
-    renderMailList();
-    toast('Mail Sent!', `Aesthetic secret letter delivered to @${to}.`);
-  };
-
-  renderMailList();
-}
-
-function renderMailList(){
-  const mails = getAllGlobalMails();
-  const myInbox = mails.filter(m => m.to === CURRENT.id);
-  const mySent = mails.filter(m => m.from === CURRENT.id);
-  const container = $('#mList');
-
-  const hasNew = myInbox.some(m => !m.read);
-  $('#chipMail').classList.toggle('hasnew', hasNew);
-
-  if(!myInbox.length && !mySent.length){
-    container.innerHTML = '<div class="empty">No secret mail yet. Enter a friend\'s User ID above to send one!</div>';
-    return;
-  }
-
-  let html = '<h4 style="margin:20px 0 10px">Inbox &amp; Sent Mails</h4>';
-  
-  mails.filter(m => m.to === CURRENT.id || m.from === CURRENT.id).forEach(item => {
-    const isInbox = item.to === CURRENT.id;
-    const otherUser = isInbox ? item.from : item.to;
-    const senderAcc = ACCOUNTS.find(a => a.id === otherUser);
-    const av = senderAcc ? senderAcc.avatar : AVATARS[0];
-
-    html += `
-      <div class="item mailitem ${isInbox && !item.read ? 'fresh' : ''}">
-        <div class="row">
-          <div class="from">
-            <img src="${av}" alt="avatar">
-            <div>
-              <h4>${isInbox ? 'From: @' + esc(item.from) : 'To: @' + esc(item.to)} ${isInbox && !item.read ? '<span class="newtag">NEW</span>' : ''}</h4>
-              <small>${niceDate(item.time)}</small>
-            </div>
-          </div>
-          <button class="btn ghost small" onclick="window.deleteMail(${item.id})" style="padding:4px 8px;font-size:13px">Delete</button>
-        </div>
-        <p>${esc(item.msg)}</p>
-      </div>
-    `;
-
-    if(isInbox && !item.read){
-      item.read = true;
-      saveGlobalMails(mails);
-    }
-  });
-
-  container.innerHTML = html;
-}
-
-window.deleteMail = async (id) => {
-  if(await askConfirm('Delete this mail item?','Delete')){
-    const mails = getAllGlobalMails().filter(m => m.id !== id);
-    saveGlobalMails(mails);
-    renderMailList();
-    toast('Deleted', 'Mail removed.');
-  }
-};
-
-function initProfileModal(){
-  const modal = $('#avatarModal');
-  const pill = $('#profilePill');
-
-  pill.onclick = () => {
-    openProfileModal();
-  };
-  $('#avClose').onclick = () => modal.classList.add('hidden');
-  modal.onclick = e => { if(e.target === modal) modal.classList.add('hidden'); };
-
-  $('#profEditBtn').onclick = () => {
-    $('#profView').classList.add('hidden');
-    $('#profEdit').classList.remove('hidden');
-    $('#eUid').value = CURRENT.id;
-    editState.avatar = CURRENT.avatar;
-    renderSetupGrid($('#editGrid'), { get val(){return editState.avatar}, set val(v){editState.avatar=v} });
-    checkEditUidValidity(CURRENT.id);
-  };
-
-  $('#eCancel').onclick = () => {
-    $('#profEdit').classList.add('hidden');
-    $('#profView').classList.remove('hidden');
-  };
-
-  const eUidInput = $('#eUid');
-  const eHint = $('#eHint');
-  const eSugg = $('#eSugg');
-
-  function checkEditUidValidity(val){
-    const clean = val.toLowerCase().replace(/[^a-z0-9_]/g, '');
-    if(clean !== val) eUidInput.value = clean;
-    if(clean.length < 3){
-      eHint.textContent = 'User ID must be at least 3 characters.'; eHint.className = 'bad'; return false;
-    }
-    if(clean !== CURRENT.id && ACCOUNTS.some(a => a.id === clean)){
-      eHint.textContent = 'User ID is already taken.'; eHint.className = 'bad';
-      eSugg.innerHTML = '';
-      return false;
-    }
-    eHint.textContent = '✓ User ID is available!'; eHint.className = 'ok';
-    eSugg.innerHTML = '';
-    return true;
-  }
-  eUidInput.oninput = e => checkEditUidValidity(e.target.value);
-
-  const editState = { avatar: CURRENT.avatar };
-
-  $('#eSave').onclick = () => {
-    const newId = eUidInput.value.trim().toLowerCase();
-    if(!checkEditUidValidity(newId)){ $('#eMsg').textContent = 'Please choose a valid & available User ID.'; return; }
-
-    const lastChange = new Date(CURRENT.lastUidChange || CURRENT.since);
-    const daysPassed = (Date.now() - lastChange.getTime()) / (1000 * 60 * 60 * 24);
-    if(newId !== CURRENT.id && daysPassed < 15){
-      const left = Math.ceil(15 - daysPassed);
-      $('#eMsg').textContent = `Profile is locked. You can change User ID & picture again in ${left} day(s).`;
-      return;
-    }
-
-    const oldId = CURRENT.id;
-    CURRENT.id = newId;
-    CURRENT.avatar = editState.avatar;
-    if(newId !== oldId) CURRENT.lastUidChange = new Date().toISOString();
-
-    ACCOUNTS = ACCOUNTS.map(a => a.email.toLowerCase() === CURRENT.email.toLowerCase() ? CURRENT : a);
-    store.gset('accounts', ACCOUNTS);
-    ss.set('active_user', CURRENT.id);
-
-    $('#profEdit').classList.add('hidden');
-    $('#profView').classList.remove('hidden');
-    openProfileModal();
-    initApp();
-    toast('Profile Updated!', 'Your cosmic identity has been refreshed.');
-  };
-
-  $('#delOpen').onclick = () => {
-    $('#profView').classList.add('hidden');
-    $('#profDel').classList.remove('hidden');
-    $('#delPass').value = '';
-    $('#delMsg').textContent = '';
-  };
-  $('#delCancel').onclick = () => {
-    $('#profDel').classList.add('hidden');
-    $('#profView').classList.remove('hidden');
-  };
-  $('#delGo').onclick = () => {
-    const pass = $('#delPass').value;
-    if(pass !== CURRENT.pass){ $('#delMsg').textContent = 'Incorrect password.'; return; }
-    
-    ACCOUNTS = ACCOUNTS.filter(a => a.email.toLowerCase() !== CURRENT.email.toLowerCase());
-    store.gset('accounts', ACCOUNTS);
-    modal.classList.add('hidden');
-    $('#logoutBtn').click();
-    toast('Account Deleted', 'All your data has been permanently erased from Cosmic Space.');
-  };
-}
-
-function openProfileModal(){
-  const modal = $('#avatarModal');
-  $('#profView').classList.remove('hidden');
-  $('#profEdit').classList.add('hidden');
-  $('#profDel').classList.add('hidden');
-
-  $('#profAv').innerHTML = `<img src="${CURRENT.avatar}" alt="avatar">`;
-  $('#profName').textContent = '@' + CURRENT.id;
-  $('#profMail').textContent = CURRENT.email;
-  $('#profSince').textContent = 'Member since ' + new Date(CURRENT.since).toLocaleDateString([], {month:'short', day:'numeric', year:'numeric'});
-
-  const lastChange = new Date(CURRENT.lastUidChange || CURRENT.since);
-  const daysPassed = (Date.now() - lastChange.getTime()) / (1000 * 60 * 60 * 24);
-  const statusEl = $('#profStatus');
-  if(daysPassed >= 15){
-    statusEl.className = 'profstatus ok';
-    statusEl.textContent = '✓ Unlocked: You can edit your User ID and profile picture now.';
-    $('#profEditBtn').removeAttribute('disabled');
-  } else {
-    const left = Math.ceil(15 - daysPassed);
-    statusEl.className = 'profstatus lock';
-    statusEl.textContent = `🔒 Locked: User ID & picture can be changed again in ${left} day(s) (every 15 days).`;
-  }
-
-  modal.classList.remove('hidden');
-}
-</script>
-</body>
-</html>
+/* ---------- AVATARS (30 neon ring images, embedded) ----------

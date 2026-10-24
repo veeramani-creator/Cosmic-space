@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: 
+https://veeramani-creator.github.io/Cosmic-space/sitemap.xml

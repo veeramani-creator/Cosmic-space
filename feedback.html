@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cosmic Space Feedback</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,sans-serif;font-size:18px;color:#f1e9ff;background:radial-gradient(circle at 20% 10%,#3b1f6e,#120a2b 70%);display:flex;align-items:center;justify-content:center;padding:16px}
+.card{width:100%;max-width:440px;background:rgba(255,255,255,.07);border:1px solid rgba(190,150,255,.4);border-radius:20px;padding:22px;box-shadow:0 0 30px rgba(150,90,255,.35)}
+h1{margin:0 0 6px;font-size:26px;text-align:center}
+p.sub{margin:0 0 16px;text-align:center;color:#cbb8ee;font-size:16px}
+input,textarea{width:100%;margin-bottom:12px;padding:12px;border-radius:12px;border:1px solid #8c6bd1;background:rgba(0,0,0,.35);color:#fff;font-size:18px;font-family:inherit}
+textarea{min-height:130px;resize:vertical}
+button{width:100%;padding:14px;border:0;border-radius:12px;font-size:19px;font-weight:700;color:#fff;background:linear-gradient(90deg,#8a5cff,#d45cff);cursor:pointer}
+button:disabled{opacity:.6}
+#msg{margin-top:12px;text-align:center;font-size:16px}
+.count{text-align:right;font-size:14px;color:#cbb8ee;margin:-8px 0 10px}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>🌙 Cosmic Space Feedback</h1>
+  <p class="sub">Website pathi unga feedback / suggestion mattum inga sollunga ✨</p>
+  <input id="name" maxlength="30" placeholder="Unga peyar" autocomplete="off">
+  <textarea id="text" maxlength="300" placeholder="Cosmic Space pathi unga feedback... Ethavathu update venum-na suggestion sollunga"></textarea>
+  <div class="count"><span id="n">0</span>/300</div>
+  <button id="btn">Submit Feedback</button>
+  <div id="msg"></div>
+</div>
+<script>
+// ====== CONFIG: Firebase Console > Project settings > Web API Key ======
+var API_KEY = "AIzaSyB8Ui8k1SxettHQPZBHDV8sRzd5jkVRiss";
+var PROJECT_ID = "moonlight-diary-6e7b6";
+// =======================================================================
+var URL_ = "https://firestore.googleapis.com/v1/projects/" + PROJECT_ID + "/databases/(default)/documents/feedbacks?key=" + API_KEY;
+var t = document.getElementById("text"), msg = document.getElementById("msg"), btn = document.getElementById("btn");
+t.addEventListener("input", function(){ document.getElementById("n").textContent = t.value.length; });
+
+function clean(s){ return s.replace(/<[^>]*>/g, "").trim(); }
+function blocked(s){ return /(https?:\/\/|www\.|\.com|\.in\b)/i.test(s); }
+
+btn.addEventListener("click", function(){
+  var name = clean(document.getElementById("name").value);
+  var text = clean(t.value);
+  msg.style.color = "#ffb3b3";
+  if (!name) { msg.textContent = "Unga peyar kudunga."; return; }
+  if (text.length < 5) { msg.textContent = "Konjam detail-a feedback ezhuthunga."; return; }
+  if (blocked(text) || blocked(name)) { msg.textContent = "Links allowed illa. Website feedback mattum ezhuthunga."; return; }
+  var last = 0;
+  try { last = +localStorage.getItem("fbLast") || 0; } catch(e){}
+  if (Date.now() - last < 60000) { msg.textContent = "Konjam neram kazhichu marubadi anuppunga."; return; }
+  btn.disabled = true; msg.style.color = "#cbb8ee"; msg.textContent = "Anuppitu irukku...";
+  fetch(URL_, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({fields: {
+      name: {stringValue: name},
+      text: {stringValue: text},
+      createdAt: {timestampValue: new Date().toISOString()}
+    }})
+  }).then(function(r){
+    if (!r.ok) throw new Error(r.status);
+    try { localStorage.setItem("fbLast", String(Date.now())); } catch(e){}
+    msg.style.color = "#b8ffcf";
+    msg.textContent = "Nandri! 💜 Unga feedback Cosmic Space home page-la varum.";
+    t.value = ""; document.getElementById("n").textContent = 0;
+  }).catch(function(){
+    msg.style.color = "#ffb3b3";
+    msg.textContent = "Submit aagala. Marubadi try pannunga.";
+  }).then(function(){ btn.disabled = false; });
+});
+</script>
+</body>
+</html>
